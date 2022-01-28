@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unite.com</title>
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+      </head>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+                    <li onclick="window.open('../home','_self')">Home</li>
+                    <li onclick="window.open('../about','_self')">About Us</li>
+                    <li onclick="window.open('../contact','_self')">Contact</li>
+                    <li id="firstlist">Cancel Booking</li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
+            <div class="centermenu">
+                <form action="/user/cancel/" method="POST">
+                    {% csrf_token %}
+                    <h2 class="heading"><center>Cancel Booking</center></h2>
+                    <center>
+                    <label class="textSize" style="color: white;"> Hotel Name:  </label>
+                    <select class="textSize" name="hotel_name" id="hotel_name" required>
+                        <option value="">Select Hotel</option>
+                        <option value="Hotel Haunted">Hotel Haunted</option>
+                        <option value="Hotel Royal King">Hotel Royal King</option>
+                        <option value="MK Hotel And Resort">MK Hotel And Resort</option>
+                        <option value="Rosewood Resort">Rosewood Resort</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label class="textSize" style="color: white;">Booking Id: </label>&nbsp;&nbsp;
+                    <input class="textSize" type="text" name="booking_id" style="width: 220px;" required>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" onclick="alertFunction('{{error}}')" class="btn">Cancel Booking</button>
+                    </center>
+                </form>
+            </div>
+            <!-- <div class="center recipt">
+                <h2>Booking Details</h2>
+                Name: {{name}} <br> 
+                Booking Id: {{booking_id}} <br>
+                Hotel Name: {{hotel_name}} <br>
+                Date: {{Date}} <br>
+                Room Type: {{room_type}} <br>
+                Room No: {{roomno}} <br>
+                Price: Rs.2,500.00 <br>
+                <br>
+            </div> -->
+    </div>
+</body>
+<script>
+    // alert if the user enters the wrong hotel name or booking id
+    function alertFunction(error) {
+        if(document.getElementById("hotel_name").value == ""){
+            alert("Please select the hotel name");
+        }
+        else if(document.getElementById("booking_id").value == ""){
+            alert("Please enter the booking id");
+        }
+        else if(error == 1){
+            alert("Please enter the correct hotel name and booking id");
+        }
+        else{
+            alert("Your booking has been cancelled");
+        }
+    }
+</script>
+</html>

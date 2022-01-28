@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bgimage{
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),url('../img/BG.jpg');
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+}
+.menu{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.leftmenu{
+    width: 20%;
+    line-height: 100Px;
+    float: left;
+}
+.leftmenu h4{
+    padding-left: 70px;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    font-family: 'montserrat', sans-serif;
+}
+.rightmenu{
+    width: 60%;
+    height: 100Px;
+    float: right;
+}
+.rightmenu ul{
+    margin-left: 200px;
+}
+.rightmenu ul li{
+    display: inline-block;
+    font-family: 'montserrat', sans-serif ;
+    list-style: none;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    line-height: 100px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.rightmenu ul li:hover{
+    color: #00ccff;
+}
+#firstlist{
+   color: #00ccff; 
+}
+
+.contact-section{
+  width: 100%;
+  display: flex;
+  padding-top:50px;                  
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info{
+  color: #fff;
+  max-width: 500px;
+  line-height: 65px;
+  padding-left: 50px;
+  font-size: 18px;
+}
+
+.contact-info i{
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.contact-form{
+  max-width: 650px;
+  margin-right: 30px;
+}
+
+.contact-info, .contact-form{
+  flex: 1;
+}
+
+.contact-form h2{
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact-form .text-box{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 10px);
+  height: 50px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .text-box:first-child{
+  margin-right: 10px;
+}
+
+.contact-form textarea{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  min-height: 200px;
+  max-height: 400px;
+  resize: vertical;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .send-btn{
+  float: right;
+  background: #2E94E3;
+  color: #fff;
+  border: none;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.contact-form .send-btn:hover{
+  background: #0582E3;
+}
+
+@media screen and (max-width: 950px){
+  .contact-section{
+    flex-direction: column;
+  }
+
+  .contact-info, .contact-form{
+    margin: 30px 50px;
+  }
+
+  .contact-form h2{
+    font-size: 30px;
+  }
+
+  .contact-form .text-box{
+    width: 100%;
+  }
+}
+
+
+.dd{
+ color:white;
+ align-items: center;
+ padding-top:50px;
+} 
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.recipt{
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* text font */
+  font-family: 'Poppins', sans-serif;
+}
+
+.heading{
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* button */
+.btn {
+  background-color: #2E94E3;
+  border: none;
+  color: white;
+  padding: 5px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+/* btn hover */
+.btn:hover {
+  background-color: #074779;
+}
+
+/* cancel text size */
+.textSize{
+  font-size :20px;
+}

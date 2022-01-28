@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unite.com</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  </head>
+  <body>
+<div class="bgimage">
+   <div class="menu">
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+            <div class="rightmenu">
+                <ul>
+                    <li onclick="window.open('../user/home','_self')" >Home</li>
+                    <li onclick="window.open('../user/about','_self')">About Us</li>
+                    <li id="firstlist">Contact</li>
+                    <li onclick="window.open('../user/cancel','_self')">Cancel Booking</li>
+                </ul>
+            </div>
+    </div>
+    <h2 class="dd" align="center">Contact Us</h2>
+    <!--contact section start-->
+    <div class="contact-section">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Ahmedabad, India</div>
+        <div><i class="fas fa-envelope"></i>unite099@unite.com</div>
+        <div><i class="fas fa-phone"></i>123-456-7890</div>
+        <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+      </div>
+      <div class="contact-form">
+        <form class="contact" action="" method="post">
+          <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+          <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="submit" name="submit" class="send-btn" value="Send">
+        </form>
+      </div>
+    </div>
+    <!--contact section end-->
+</div>
+  </body>
+</html>

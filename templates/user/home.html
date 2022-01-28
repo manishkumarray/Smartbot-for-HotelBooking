@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Unite.com</title>
+   
+</head>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+                    <li id="firstlist">Home</li>
+                    <li onclick="window.open('../about','_self')">About Us</li>
+                    <li onclick="window.open('../contact','_self')">Contact</li>
+                    <li onclick="window.open('../cancel','_self')">Cancel Booking</li>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="text">
+            <h4>KNOWN FOR </h4>
+            <h1> CREATIVE & UNIQUENESS </h1>
+            <h3> “It has been, and continues to be, our responsibility to fill the earth with the light and warmth of hospitality.”</h3>
+            <button class="btn" onclick="window.open('../check','_self')">Check Booking</button>
+            <!-- <button class="btn"> Enquiry</button> -->
+        </div>
+    </div>
+
+    <!-- Chatbot start -->
+    <script src="{% static 'javascript\script_bot.js' %}" type="text/javascript"></script>
+    <!-- chatbot ends -->
+</body>
+</html>

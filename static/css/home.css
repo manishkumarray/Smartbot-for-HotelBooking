@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.bgimage{
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),url('../img/BG.jpg');
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+}
+.menu{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.leftmenu{
+    width: 20%;
+    line-height: 100Px;
+    float: left;
+}
+.leftmenu h4{
+    padding-left: 70px;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    font-family: 'montserrat', sans-serif;
+}
+.rightmenu{
+    width: 60%;
+    height: 100Px;
+    float: right;
+}
+.rightmenu ul{
+    margin-left: 200px;
+}
+.rightmenu ul li{
+    display: inline-block;
+    font-family: 'montserrat', sans-serif ;
+    list-style: none;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    line-height: 100px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.rightmenu ul li:hover{
+    color: #00ccff;
+}
+#firstlist{
+   color: #00ccff; 
+}
+.text{
+    width: 100%;
+    margin-top:185px ;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+
+}
+.text h4{
+    font-size: 14px;
+    font-family: 'open sans', sans-serif;
+}
+.text h1{
+    font-size: 62px;
+    font-family: 'montserrat', sans-serif ;
+    font-weight: 700px;
+    margin: 14px 0px;
+}
+.text h3{
+    font-size: 15px;
+    font-family: 'open sans', sans-serif;
+}
+.btn{
+    background-color: rgba(255,255,255, 0.164);
+    color: white;
+    font-family: 'montserrat', sans-serif ;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 40px;
+    width: 150px;
+    margin-top: 25px;
+    border: 3px solid white;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.openChatBtn:hover{
+    background-color: white;
+    color: black;
+}
+/*popup*/
+
+.openChatBtn {
+    background-color: rgba(255,255,255, 0);
+    padding: 0px 0px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+ }
+ .openChat {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #ff08086b;
+    z-index: 9;
+ }
+ form {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+ }
+ form textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    font-weight: 500;
+    background: #d5e7ff;
+    color: rgb(0, 0, 0);
+    resize: none;
+    min-height: 200px;
+ }
+ form textarea:focus {
+    background-color: rgb(219, 255, 252);
+    outline: none;
+ }
+ form .btn {
+    background-color: rgb(34, 197, 107);
+    color: white;
+    padding: 16px 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+ }
+ form .close {
+    background-color: red;
+ }
+ form .btn:hover, .openChatBtn:hover {
+    opacity: 1;
+ }
+

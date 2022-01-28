@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <title>Hotel Royal King</title>
+   
+</head>
+
+<body>
+<!-- Room Schema -->
+<div class="bgimage2">   
+    <div>
+        <br>
+        <h2 class="lead-head"><center>Book Your Room</center></h2>
+        <br>
+        <center>
+        <form action="/user/check_date2/" method="POST">
+        {% csrf_token %}
+            <label class="lead-head2">Pick a date:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class="date" id="datePickerId" name="check_date" type="date">&nbsp;&nbsp;
+            <input type="submit" value="Refresh" class="refresh"></input>
+            <br><br>
+        </form>
+            <table>
+                {% if date == none %}
+                <caption><h4 class="lead-head2">Please Pick a Date</h4></caption>
+                {%else%}
+                <caption><h4 class="lead-head2">Room Status On {{date}}</h4></caption>
+                {% endif %}
+                <tr>
+                    {% for room in available_room %}
+                        {% if room in booked_room %}
+                            <td class="check-room-table" id="btn-booked" disabled="true">{{ room }}</td>
+                                {% if room == 106 or room == 112 or room == 118 %}
+                                    </tr>
+                                    <tr>
+                                {% endif %}
+                                {% else %}
+                                    <td class="check-room-table btn-table" onclick='openForm("{{ room }}","{{ date }}")'>{{ room }}</td>
+                                        {% if room == 106 or room == 112 or room == 118%}
+                                            </tr>
+                                            <tr>
+                                        {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </table>
+        </center>
+    </div>
+    <div>
+        <center>
+            <br><br>
+            <input type="submit" value="  " class="Red"><label class="lead-head2"> : Room Booked</label>&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="  " Class="Green"><label class="lead-head2"> : Room Avalaible</label>
+        </center>
+    </div>   
+</div>
+
+
+<!-- form itself end-->
+    <div class="form-book-now" id="book-form">
+        <form action="/user/payhome" method="POST">
+            {% csrf_token %}
+            <h2><center>Book Your Room</center></h2>
+            <br>
+            <center>
+            <label>Name:</label>
+            <input type="text" id="fname"  name="c_name" required > &nbsp; &nbsp; &nbsp; &nbsp;
+            <label>Email:</label>
+            <input type="email" id="lname" name="c_email" required><br><br>
+            <label>Contact:</label>
+            <input type="tel" id="lname" name="c_contact" pattern="^((0091)|(\+91)|0?)[6789]{1}\d{9}$" required>&nbsp; &nbsp;&nbsp; 
+            <label>No. Of Person:</label>
+            <select class="form-select wide" name="c_nop" id="default-select"  required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+            </select>
+            <br><br>
+            <label>Date:</label>
+            <input type="date" id="set_date" name="c_check_in" readonly="readonly" required>&nbsp; &nbsp;&nbsp;
+            <label>Room No: </label>
+            <input type="text" id="roomno" name="c_room_no" readonly="readonly" required>
+            <br><br>
+            <label>Room Type:</label>
+            <select class="form-select wide" id="room_type" name="c_rt" required>
+                        <option value="1">Luxaries Rooms</option>
+                        <option value="2">Deluxe Room</option>
+                        <option value="3">Signature Room</option>
+                        <option value="4">Couple Room</option>
+            </select>
+            <br><br>
+            <button type="submit" class="btn" value="submit">Submit</button>
+            <button type="button" class="btn close" onclick="closeForm()">Close</button>
+            </center>
+        </form> 
+    </div>
+<!-- form itself end -->
+
+<script>
+    datePickerId.min = new Date().toISOString().split("T")[0];
+
+    // document.querySelector(".btn") .addEventListener("click", openForm);
+    document.querySelector(".close").addEventListener("click", closeForm);
+    function openForm(room,date) {
+       document.querySelector(".form-book-now").style.display = "block";
+       roomno.value = room;
+       set_date.value = date;
+    }
+
+    function closeForm() {
+       document.querySelector(".form-book-now").style.display = "none";
+    }
+
+ </script>
+</body>

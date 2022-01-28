@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <title>Unite.com</title>
+   
+</head>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+                    <li onclick="window.open('../user/home','_self')" >Home</li>
+                    <li id="firstlist">About Us</li>
+                    <li onclick="window.open('../user/contact','_self')">Contact</li>
+					<li onclick="window.open('../user/cancel','_self')">Cancel Booking</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				<div class="content">
+					<h3>What Unite.com do?</h3>
+					<p>We are a metasearch engine that compares accommodation prices 
+					   and offers provided to us by many different online booking sites.  
+					   We compare and display different offers from many booking sites, 
+					   and they pay us a fee if a user clicks on their specific deal. 
+					   We are not a party to any booking agreement between you and the 
+					   site or accommodation you book with. We do not collect any payments 
+					   for your stay and are not liable for the services offered by the 
+					   booking site and the accommodation provider.</p>
+					<div>
+						<button class="btn"> Read More</button>
+					</div>
+				</div>
+				<div class="social">
+					<a href="" class="cc"><i class="fab fa-facebook-f cc"></i></a>
+					<a href="" class="cc"><i class="fab fa-twitter cc"></i></a>
+					<a href="" class="cc"><i class="fab fa-instagram cc"></i></a>
+				</div>
+			</div>
+			<div class="image-section">
+				<img src="{% static 'img/about.jpg' %}">
+			</div>
+		</div>
+   </div>
+
+</body>
+</html>

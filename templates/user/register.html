@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Unite.com</title>
+   
+</head>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+                    <li onclick="window.open('../user/home','_self')" >Home</li>
+                    <li onclick="window.open('../user/hotel1','_self')" >Hotels & Resort</li>
+                    <li onclick="window.open('../user/about','_self')">About Us</li>
+                    <li onclick="window.open('../user/contact','_self')">Contact</li>
+                    <li id="firstlist">Register</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>Registration</h1>
+				</div>
+				<div class="form-group" >
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <p><button class="btn btn-secondary" id="reg-btn" onClick="alert('You are successfully registered!!')">Register
+                        </button></p>
+                    </form>
+                </div>
+				</div>
+			</div>
+			
+		</div>
+   </div>
+
+</body>
+</html>

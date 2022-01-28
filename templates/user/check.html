@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/check.css' %}">
+    <title>Unite.com</title>
+   
+</head>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <div class="leftmenu">
+                <h4> Unite.com </h4>
+            </div>
+
+            <div class="rightmenu">
+                    <ul>
+                        <li onclick="window.open('../user/home','_self')">Home</li>
+                        <li onclick="window.open('../user/about','_self')">About Us</li>
+                        <li onclick="window.open('../user/contact','_self')">Contact</li>
+                        <li onclick="window.open('../user/cancel','_self')">Cancel Booking</li>
+                    </ul>
+            </div>
+        </div>
+        <form action="/user/check/" method="POST" > 
+            {% csrf_token %}
+            <div class="text">
+                <h1>Check Availability for Hotel & Resort</h1>
+                <b><label>Pick a date:  </label>
+                <input id="datePickerId" name="date" type="date" required>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn">Go</button>
+            </div>
+        </form><br>
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        {% if date == none %}
+                        <td>Please pick a date!!</td>
+                        {% else %}
+                            {% for hotel in available_hotels %}
+                                <td class="hotel-list" onclick="window.open('../{{hotel.0}}','_self')">{{hotel.0}}<br><h6>No of Avalaible Rooms: {{hotel.1}}</h6></td>
+                                {% if hotel in available_hotels %}
+                                    </tr>
+                                    <tr>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </div>
+    </div>
+<script>
+    datePickerId.min = new Date().toISOString().split("T")[0];
+</script>
+</body>
+</html>
